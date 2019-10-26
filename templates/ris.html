@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AWS Inspector</title>
+
+</head>
+<body>
+<script>
+        function regionchange() {
+            var value = document.getElementById("comboA").value;
+            window.location.replace("info?instanceid="+value);
+        };
+</script>
+<select id="comboA" onchange="regionchange()">
+    <option value="">Select Instance</option>
+    {% for instance in instancesinregion %}
+    <option value= "{{instance}}">{{instance}}</option>"
+    {% endfor %}
+</select>
+</body>
+</html>
