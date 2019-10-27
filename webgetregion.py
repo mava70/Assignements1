@@ -1,13 +1,15 @@
 import boto3
 import json
-import configfile
+from configfile import *
 
 reg = []
 from boto3.session import Session
-if ACCESS_KEY <> "":
+if ACCESS_KEY != "":
+    print(ACCESS_KEY)
     s = Session(
     aws_access_key_id=ACCESS_KEY,
     aws_secret_access_key=SECRET_KEY)
+    print(s)
 else:
     s=Session()
 regions = s.get_available_regions('ec2')
@@ -19,7 +21,7 @@ for item in regions:
         #print(item)
         if item=="ap-east-1" or item=="me-south-1":
             continue
-        ec22 = boto3.resource('ec2', region_name=item)
+        ec22 = s.resource('ec2', region_name=item)
         instances = ec22.instances.filter(
             Filters=[{'Name': 'instance-state-name', 'Values': ['running']}])
         a=0
@@ -45,9 +47,11 @@ def dropdown():
 def risorse():
     ins = []
     global region
+    global s
+
     region = request.args.get('region')
     print(region)
-    ec22 = boto3.resource('ec2', region_name=region)
+    ec22 = s.resource('ec2', region_name=region)
     instances = ec22.instances.filter(
         Filters=[{'Name': 'instance-state-name', 'Values': ['running']}])
     a = 0
@@ -60,10 +64,12 @@ def risorse():
 @app.route('/info', methods=['GET'])
 def instanceinfo():
     global region
+    global s
+
     insinfo = []
     instanceid = request.args.get('instanceid')
-    print("presaregion "+instanceid)
-    ec22 = boto3.resource('ec2', region_name=region)
+    print("presaregion " + region + " presainstance " + instanceid)
+    ec22 = s.resource('ec2', region_name=region)
     instances = ec22.instances.filter(
         Filters=[{'Name': 'instance-state-name', 'Values': ['running']}])
     a = 0
