@@ -59,7 +59,7 @@ def risorse():
         a = a + 1
         ins.append(instance.id)
         # print(instance.id, instance.instance_type)
-    return render_template('ris.html', instancesinregion=ins)
+    return render_template('ris.html', instancesinregion=ins,regn=region)
 
 @app.route('/info', methods=['GET'])
 def instanceinfo():
@@ -68,6 +68,7 @@ def instanceinfo():
 
     insinfo = []
     instanceid = request.args.get('instanceid')
+    region = request.args.get('regn')
     print("presaregion " + region + " presainstance " + instanceid)
     ec22 = s.resource('ec2', region_name=region)
     instances = ec22.instances.filter(

@@ -9,7 +9,7 @@
 <script>
         function regionchange() {
             var value = document.getElementById("comboA").value;
-            window.location.replace("info?instanceid="+value);
+            window.location.replace("info?instanceid="+value+"&regn={{regn}}");
         };
 </script>
 <select id="comboA" onchange="regionchange()">

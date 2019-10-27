@@ -1,4 +1,4 @@
 #!/bin/bash
-docker stop assi
-docker rm assi
-docker rmi assi
+docker stop assignements1
+docker rm assignements1
+docker rmi assignements1
