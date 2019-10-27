@@ -1,10 +1,18 @@
 import boto3
 import json
+import configfile
+
 reg = []
 from boto3.session import Session
-s = Session()
+if ACCESS_KEY <> "":
+    s = Session(
+    aws_access_key_id=ACCESS_KEY,
+    aws_secret_access_key=SECRET_KEY)
+else:
+    s=Session()
 regions = s.get_available_regions('ec2')
 region=""
+
 
 for item in regions:
     try:
@@ -26,12 +34,11 @@ for item in regions:
 
 from flask import Flask, render_template, request
 app = Flask(__name__)
-app.debug = True
+app.debug = False
 
 
 @app.route('/', methods=['GET'])
 def dropdown():
-    #colours = ['Red', 'Blue', 'Black', 'Orange']
     return render_template('reg.html', regionsactive=reg)
 
 @app.route('/risorse', methods=['GET'])
