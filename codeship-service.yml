@@ -9,6 +9,6 @@ services:
   testolino:
     build: ./tests
       volumes:
-        - .:/app
+        - ./test:/app
       ports:
         - "56734:80"

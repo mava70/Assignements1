@@ -1,0 +1,3 @@
+name: testolino1
+service: testolino
+command: python /app/testolino1.py web
