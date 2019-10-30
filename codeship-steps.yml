@@ -1,9 +1,9 @@
-name: testolino1
-service: testolino
-command: python /app/testolino1.py web
-name: testolino2
-service: testolino
-command: python /tmp/testolino1.py web
-name: testolino3
-service: testolino
-command: python /tmp/testolino1.py 172.0.0.1
+- name: testolino1
+  service: testolino
+  command: python /app/testolino1.py web
+- name: testolino2
+  service: testolino
+  command: python /tmp/testolino1.py web
+- name: testolino3
+  service: testolino
+  command: python /tmp/testolino1.py 172.0.0.1
