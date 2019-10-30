@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "56733:80"
+  testolino:
+    build: ./tests
+      volumes:
+        - .:/app
+      ports:
+        - "56734:80"
