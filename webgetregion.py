@@ -1,9 +1,14 @@
 import boto3
 import json
+import os
 from configfile import *
 
 reg = []
 from boto3.session import Session
+if not os.environ.get('APIKEY'):
+    ACCESS_KEY=os.environ.get('APIKEY')
+    SECRET_KEY=os.environ.get('SECRET')
+
 if ACCESS_KEY != "":
     print(ACCESS_KEY)
     s = Session(
