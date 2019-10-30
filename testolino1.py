@@ -3,7 +3,7 @@ import sys
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 url=sys.argv[1]
-driver = webdriver.Chrome('/terraform/chromedriver.exe')  # Optional argument, if not specified will search path.
+driver = webdriver.Chrome('chromedriver')  # Optional argument, if not specified will search path.
 driver.get('http://'+ url+ ':5000/');
 time.sleep(1) # Let the user actually see something!
 region_box = driver.find_element_by_id('comboA')
