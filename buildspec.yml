@@ -8,7 +8,7 @@ env:
 phases:
   install:
     runtime-versions:
-      Docker: 18
+      docker: 18
     commands:
       - echo Entered the install phase...
       - echo Logging in to Amazon ECR...
