@@ -2,7 +2,6 @@ import json
 import os
 from configfile import *
 import boto3
-
 reg = []
 from boto3.session import Session
 if not os.environ.get('APIKEY'):
