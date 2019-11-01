@@ -5,6 +5,8 @@ ENV STATIC_PATH /var/www/app/static
 COPY ./requirements.txt /var/www/requirements.txt
 RUN pip install -r /var/www/requirements.txt
 COPY ./webgetregion.py /app
+COPY ./configfile.py /app
 COPY ./uwsgi.ini /app
-COPY ./templates /app/templates
+RUN mkdir /app/templates
+COPY ./templates/* /app/templates/
 
