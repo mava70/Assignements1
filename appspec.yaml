@@ -14,9 +14,3 @@ Resources:
             Subnets: ["subnet-07944609363a76951","subnet-01e9bbe958bf2cbb0" ]
             SecurityGroups: ["sg-09be88a7c588fe4c9"]
             AssignPublicIp: "ENABLED"
-Hooks:
-  - BeforeInstall: "LambdaFunctionToValidateBeforeInstall"
-  - AfterInstall: "LambdaFunctionToValidateAfterTraffic"
-  - AfterAllowTestTraffic: "LambdaFunctionToValidateAfterTestTrafficStarts"
-  - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeAllowingProductionTraffic"
-  - AfterAllowTraffic: "LambdaFunctionToValidateAfterAllowingProductionTraffic"
