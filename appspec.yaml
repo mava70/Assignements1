@@ -1,4 +1,3 @@
-
 version: 0.0
 Resources:
   - TargetService:
@@ -6,7 +5,7 @@ Resources:
       Properties:
         TaskDefinition: <TASK_DEFINITION>
         LoadBalancerInfo:
-          ContainerName: "SampleApplicationName"
+          ContainerName: "assignement1"
           ContainerPort: 80
 # Optional properties
         PlatformVersion: "LATEST"
