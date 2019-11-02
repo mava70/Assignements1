@@ -5,7 +5,7 @@ Resources:
       Properties:
         TaskDefinition: <TASK_DEFINITION>
         LoadBalancerInfo:
-          ContainerName: "assignement1"
+          ContainerName: "assi"
           ContainerPort: 80
 # Optional properties
         PlatformVersion: "LATEST"
